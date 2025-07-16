@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, session
 import mysql.connector
+import os
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 
 conn = mysql.connector.connect(
     host = "localhost",
@@ -21,7 +23,10 @@ def register():
 
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    if 'user_id' in session:
+         return render_template('home.html')
+    else:
+        return redirect('/')
 
 @app.route('/login_validation', methods = ['POST'])
 def login_validation():
@@ -33,7 +38,31 @@ def login_validation():
     cursor.execute(query, values)
     users = cursor.fetchall()
 
-    return users
+    if len(users) > 0:
+        session['user_id'] = users[0][0]
+        return redirect('/home')
+    else:
+        return redirect('/')
+
+@app.route('/add_user', methods = ['POST'])
+def add_user():
+    name = request.form.get('uname')
+    email = request.form.get('uemail')
+    password = request.form.get('password')
+
+    query = "INSERT INTO users (name, email, password) VALUES (%s,%s,%s)"
+    values = (name, email, password)
+
+    cursor.execute(query, values)
+    conn.commit()
+
+    return redirect('/login')
+
+@app.route('/logout')
+def logout():
+    session.pop('user_id')
+    return redirect('/')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
