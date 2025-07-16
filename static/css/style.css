@@ -8,18 +8,3 @@ background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, F
 .mt-100{
 margin-top:100px
 }
-
-:root {
-    --color-bg: #ffffff; /* Light background */
-    --color-fg: #000000; /* Light text */
-}
-
-[data-theme="dark"] {
-    --color-bg: #000000; /* Dark background */
-    --color-fg: #ffffff; /* Dark text */
-}
-
-body {
-    background-color: var(--color-bg);
-    color: var(--color-fg);
-}
