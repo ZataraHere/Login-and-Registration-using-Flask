@@ -5,6 +5,13 @@
 
   <p>This project is a simple <strong>user login and registration system</strong> built with <strong>Flask</strong> and <strong>MySQL</strong>. It allows users to register, log in, and access a protected home page after authentication.</p>
 
+   <h2>📸 Screenshot: Login Page</h2>
+<img src="static/images/Screenshot (76).png" alt="Login Page" width="600" />
+
+<h2>📸 Screenshot: Home Page</h2>
+<img src="static/images//Screenshot (77).png" alt="Registration Page" width="600" />
+
+
   <div class="section">
     <h2>🚀 Features</h2>
     <ul>
