@@ -1,33 +1,4 @@
 
- <title>Flask Login & Registration System</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-      background-color: #f9f9f9;
-    }
-    h1, h2, h3 {
-      color: #2c3e50;
-    }
-    pre {
-      background: #eee;
-      padding: 1em;
-      overflow-x: auto;
-    }
-    code {
-      font-family: Consolas, monospace;
-    }
-    ul {
-      margin-left: 1.5em;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-  </style>
-</head>
 <body>
 
   <h1>🔐 Flask Login & Registration System</h1>
